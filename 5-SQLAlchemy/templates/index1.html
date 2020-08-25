@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Flask Template Example</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    </head >
+    <body >
+        <div >
+            <h1>EMPLOYEES :  </h1>
+            <h1>{{vall}}</h1>
+            <div class="table-responsive">       
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Sex</th>
+                            <th>Salary</th>
+                            <th>Branch</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        {% for fn,ln,sx,sal,bn in data%}
+
+                            <tr>
+                                <td>{{fn}} {{ln}}</td>
+                                {% if sx =='M' %}
+                                    <td>Male</td>
+                                {% else %}
+                                    <td>Female</td>
+                                {% endif %}
+                                <td>{{sal}}</td>
+                                <td>{{bn}}</td>
+                            </tr>
+                        {% endfor%}
+                    </tbody>
+                </table>
+            </div >
+        </div >
+    </body>
+</html>
+

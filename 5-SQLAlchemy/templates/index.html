@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Flask Template Example</title>
+    </head >
+    <body >
+        <div >
+            <h3>Notes : </h3>
+            <div style="text-align:center" >
+                <ul>
+                    {% for note in notes%}
+                        <li>
+                            <div style="background-color:#DDD; margin-top:30px; border-width:5px;border-color:#000">
+                                <h2 >{{note[0]}}</h2 >
+                                <h3 >{{note[1]}}</h3 >
+                            </div>
+                        </li>
+                    {% endfor%}
+                </ul>
+            </div >
+            <form method="post" action="{{url_for('index')}}">
+                <input type="text" name="title" placeholder="Title">
+                <input type="text" name="note" placeholder="Note">
+                <button> Submit </button>
+            </form >
+        </div >
+    </body>
+</html>
+
