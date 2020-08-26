@@ -6,6 +6,7 @@ from sqlalchemy.orm import scoped_session
 from sqlalchemy.orm import sessionmaker
 
 engine = create_engine("mysql://root:password@localhost/notes")
+# replcae root with your username, password with your users password
 db = scoped_session(sessionmaker (bind = engine))
 
 app = Flask(__name__)
