@@ -24,14 +24,11 @@ def delnote():
         except :
             m = "ERROR while deleting a record !"
             print(m)
-            
-    dat = db.execute("SELECT id, title, body, created_at, due_at FROM notes;")
-
-    return redirect(url_for("index"))
+    return redirect(url_for("index",mess = m))
 
 
 @app.route('/',methods=["GET", "POST"])
-def index():
+def index(mess = "Empty"):
     m = "Done !"
     if request.method == "POST":
 
@@ -58,6 +55,8 @@ def index():
             print(m)
     
         print("Done querying !")
+    if request.args.get("mess") != None:
+        m = request.args.get("mess")
     dat = db.execute("SELECT id, title, body, created_at, due_at FROM notes;")
     return render_template('index.html',data=dat,mess=m)
 

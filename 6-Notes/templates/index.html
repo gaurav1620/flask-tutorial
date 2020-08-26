@@ -10,8 +10,7 @@
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     </head >
     <body >
-        <div >
-            
+        <div class="container">            
             <h1>NOTES :  </h1>
             <div class="table-responsive">       
                 <table class="table">
@@ -37,40 +36,51 @@
                     </tbody>
                 </table>
             </div >
-            <h3> Message : {{mess}}</h3>
+            <h3> Message from server : {{mess}}</h3> 
             <br>
             <br>
             <br>
             
             <h3> Add a new Note </h3> 
+
             <form method="post" action="{{url_for('index')}}">
-                <label> Enter Title : </label>
-                <input type="text" name="title" placeholder="Title">
+                <div class="form-group">
+                    <label> Enter Title : </label>
+                    <input class="form-control" type="text" name="title" placeholder="Title">
+                </div>
                 <br>
 
-                <label> Enter Body : </label>
-                <input type="text" name="body" placeholder="Body">
+                <div class="form-group">
+                    <label> Enter Body : </label>
+                    <input class="form-control" type="text" name="body" placeholder="Body">
+                </div>
                 <br>
                 
-                <label> Set Due Date : </label>
-                <input type="date" id="dd" name="dd">
+                <div class="form-group">
+                    <label> Set Due Date : </label>
+                    <input class="form-control" type="date" id="dd" name="dd">
+                </div>
                 <br>
                 
-                <label> Set Due Time : </label>
-                <input type="time" id="dt" name="dt">
+                <div class="form-group">
+                    <label> Set Due Time : </label>
+                    <input class="form-control" type="time" id="dt" name="dt">
+                </div>
                 <br>
                 
-                <button> Submit </button>
+                <button class="btn btn-primary"> Submit </button>
             </form >
             <br>
             <br>
             <br>
             <h3> Delete a Note </h3>
             <form method="post" action="{{url_for('delnote')}}">
-                <label> Enter ID : </label>
-                <input type="text" name="id" placeholder="id">
-                <br>
-                <button> Submit </button>
+                <div class="form-group">
+                    <label> Enter Note ID : </label>
+                    <input class="form-control" type="text" name="id" placeholder="id">
+                    <br>
+                </div>
+                <button class="btn btn-primary" > Submit </button>
             </form >
 
         </div >
